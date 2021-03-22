@@ -23,5 +23,3 @@ print("The alien is " + alien_2['color'] + ".")
 
 alien_2['color'] = 'yellow'
 print("The alien is now " + alien_2['color'] + ".")
-
-
