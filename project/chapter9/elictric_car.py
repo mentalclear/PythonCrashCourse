@@ -1,49 +1,4 @@
-class Car:
-    """ A simple car representation """
-
-    def __init__(self, make, model, year):
-        """Initializing attributes"""
-        self.make = make
-        self.model = model
-        self.year = year
-        self.odometer_reading = 0 # Declaring a field and setting default value
-        self.gallons = 5
-
-
-    def get_descriptive_name(self):
-        """ Return neatly formated descriptive name """
-        long_name = f"{self.year} {self.make} {self.model}"
-        return long_name.title()
-
-
-    def read_odometer(self):
-        """Printing the car milage info"""
-        print(f"This car has {self.odometer_reading} miles on it")
-
-
-    def update_odometer(self, milage):
-        """
-        Method to update the milage on a car to given value
-        Rejecting the change if it attempts to roll the odometer back
-        """
-        if milage >= self.odometer_reading:
-            self.odometer_reading = milage
-        else:
-            print("You cannot roll back the odometer!")
-
-
-    def increment_odomenter(self, miles):
-        """ Add the given amount of miles to the odomenter reading""" 
-        if (self.odometer_reading + miles) >= self.odometer_reading:
-            self.odometer_reading += miles
-        else:
-            print("You cannot decrement the odometer reading")
-
-    def fill_gas_tank(self, gallon_count):
-        self.gallons += gallon_count
-        print(f"Stopped at the Gas station to put in {gallon_count} gallons of gas")
-        print(f"Fuel gauge shows {self.gallons} gallons now")
-
+from car import Car
 
 class Battery:
     """ Asimple attempt to model a battery for an elecctric car"""
@@ -78,15 +33,3 @@ class ElectricCar(Car):
     def fill_gas_tank(self):
         """Electric cars don't have gas tanks"""
         print("This car doesn't have a gas tank!")
-
-
-my_car= Car('toyota', 'highlander', 2016)
-my_car.fill_gas_tank(15)
-print("\n")
-
-my_tesla = ElectricCar('tesla', 'model s', 2019)
-print(my_tesla.get_descriptive_name())
-my_tesla.battery.describe_battery()  # calling a method on a reference.
-my_tesla.battery.get_range()
-
-my_tesla.fill_gas_tank()

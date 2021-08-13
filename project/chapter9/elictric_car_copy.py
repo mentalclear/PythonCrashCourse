@@ -1,5 +1,3 @@
-""" A class that can be used to represent a car"""
-
 class Car:
     """ A simple car representation """
 
@@ -48,7 +46,7 @@ class Car:
 
 
 class Battery:
-    """ A simple attempt to model a battery for an elecctric car"""
+    """ Asimple attempt to model a battery for an elecctric car"""
 
     def __init__(self, battery_size=75):
         """Initialize the battery's attribute"""
@@ -80,4 +78,15 @@ class ElectricCar(Car):
     def fill_gas_tank(self):
         """Electric cars don't have gas tanks"""
         print("This car doesn't have a gas tank!")
-        
+
+
+my_car= Car('toyota', 'highlander', 2016)
+my_car.fill_gas_tank(15)
+print("\n")
+
+my_tesla = ElectricCar('tesla', 'model s', 2019)
+print(my_tesla.get_descriptive_name())
+my_tesla.battery.describe_battery()  # calling a method on a reference.
+my_tesla.battery.get_range()
+
+my_tesla.fill_gas_tank()
