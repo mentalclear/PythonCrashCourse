@@ -1,0 +1,4 @@
+I learned Python lists
+I learned Python tuples
+I learned Python control flow
+I learned Python classes and imports
